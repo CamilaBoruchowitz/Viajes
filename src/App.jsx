@@ -12,15 +12,14 @@ function App() {
   return (
     <>
       <Nav />
-      
       <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/viajes" element={<Viajes />}/>
-        <Route path="/Contactar" element={<Contactar />}/>
-        <Route path= "/Error" element={<Error/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/viajes" element={<Viajes />} />
+        <Route path="/Contactar" element={<Contactar />} />
+        <Route path="/Error" element={<Error />} />
 
-        <Route path="*"  element={<Navigate to="/Error"/>}/>
+        <Route path="*" element={<Navigate to="/Error" />} />
       </Routes>
       <Footer />
     </>
