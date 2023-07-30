@@ -43,7 +43,7 @@ const Login = () => {
           </legend>
           <label htmlFor="usuario">Usuario: </label>
           <input
-            className="mb-7"
+            className=" w-full sm:w-auto sm:ml-1 mb-7"
             type="text"
             name="usuario"
             placeholder="Escriba su usuario"
@@ -54,7 +54,7 @@ const Login = () => {
           <br />
           <label htmlFor="contrasena">Contraseña: </label>
           <input
-            className="mb-16"
+            className="mb-16 w-full sm:w-auto sm:ml-1"
             type="password"
             name="contrasena"
             placeholder="Escriba su contraseña"
