@@ -39,7 +39,10 @@ const Contactar = () => {
           name="asunto"
         />
         <br />
-        <button className="p-4 mb-4 border-2 border-amber-300" type="submit">
+        <button
+          className="p-4 mb-4 border-2 rounded border-amber-400 bg-amber-400 text-slate-800"
+          type="submit"
+        >
           Enviar
         </button>
       </form>

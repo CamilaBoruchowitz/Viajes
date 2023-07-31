@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     if (formData.usuario.length > 0 && formData.contrasena.length > 0) {
       localStorage.setItem(formData.usuario, JSON.stringify(formData));
-      navegar("/");
+      navegar("/viajes");
     } else {
       alert("Debes ingresar un usuario y/o contraseña válida");
     }
@@ -27,11 +27,12 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // ?. puede o no estar definido
     if (
-      usuarioExistente.usuario === formData.usuario &&
-      usuarioExistente.contrasena === formData.contrasena
+      usuarioExistente?.usuario === formData?.usuario &&
+      usuarioExistente?.contrasena === formData?.contrasena
     ) {
-      navegar("/");
+      navegar("/viajes");
     } else {
       alert(
         "Debes estar registrado para ingresar o has puesto usuario y/o contraseña inválida"
@@ -42,7 +43,7 @@ const Login = () => {
   return (
     <>
       <form
-        className="bg-slate-900 text-amber-400 text-3xl text-center rounded-sm border-8 border-double border-amber-300 mx-auto max-w-3xl mb-3 p-1 mt-10%"
+        className="bg-slate-900 text-amber-400 text-3xl text-center rounded-sm border-8 border-double border-amber-300 mx-auto max-w-3xl mb-3 p-3 mt-10%"
         onSubmit={(e) => handleSubmit(e)}
       >
         <fieldset>
@@ -72,17 +73,17 @@ const Login = () => {
           <br />
           <div className="flex justify-around ">
             <button
-              className="border rounded p-3 bg-blue-800 text-white text-2xl sm:text-3xl"
-              type="submit"
-            >
-              Ingresar
-            </button>
-            <button
-              className="border rounded p-3 bg-green-700 text-white text-2xl sm:text-3xl"
+              className="border rounded border-amber-400 p-3 text-amber-400 text-2xl sm:text-3xl"
               type="button"
               onClick={(e) => handleRegistro(e)}
             >
               Registrarse
+            </button>
+            <button
+              className="border rounded border-amber-400 p-3  bg-amber-400 text-slate-800 text-2xl sm:text-3xl"
+              type="submit"
+            >
+              Ingresar
             </button>
           </div>
         </fieldset>
