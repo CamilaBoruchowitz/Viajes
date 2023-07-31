@@ -15,6 +15,11 @@ const Login = () => {
   //   fun para q busque los existentes
   const usuarioExistente = JSON.parse(localStorage.getItem(formData.usuario));
 
+  // const contrasenaExistente = JSON.parse(localStorage.getItem(formData.contrasena));
+  //quiero poner esto para que recuerde tambien del existente la contraseña, porque solo con el usuario puede entrar y tiene que ser con los dos
+  //tendria que agregarñe a usuarioWxistente un && contrasenaExistente? si es asi no me lo toma.
+  //Y QUE SALTE UN ALERT CUANDO NO PUEDA INGRESAR DE USUARIO Y/O CONTRASEÑA INCORRECTO Y ALERT TAMBIEN SI APRETA Y NO ESTA REGISTRADO
+
   const handleRegistro = (e) => {
     e.preventDefault();
     if (formData.usuario.length > 0 && formData.contrasena.length > 0) {
@@ -31,6 +36,7 @@ const Login = () => {
       navegar("/");
     }
   };
+
   return (
     <>
       <form
