@@ -34,12 +34,12 @@ const Contactar = () => {
           Asunto:
         </label>
         <input
-          className="mb-20 w-full sm:w-auto sm:ml-1"
+          className="mb-12 w-full sm:w-auto sm:ml-1"
           type="email"
           name="correo"
-        />{" "}
+        />
         <br />
-        <button className="p-4" type="submit">
+        <button className="p-4 mb-4 border-2 border-amber-300" type="submit">
           Enviar
         </button>
       </form>
