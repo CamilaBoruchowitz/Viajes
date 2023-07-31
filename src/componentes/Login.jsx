@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     if (formData.usuario.length > 0 && formData.contrasena.length > 0) {
       localStorage.setItem(formData.usuario, JSON.stringify(formData));
-      navegar("/");
+      navegar("/viajes");
     } else {
       alert("Debes ingresar un usuario y/o contraseña válida");
     }
@@ -31,7 +31,7 @@ const Login = () => {
       usuarioExistente.usuario === formData.usuario &&
       usuarioExistente.contrasena === formData.contrasena
     ) {
-      navegar("/");
+      navegar("/viajes");
     } else {
       alert(
         "Debes estar registrado para ingresar o has puesto usuario y/o contraseña inválida"
