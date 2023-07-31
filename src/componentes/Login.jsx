@@ -15,11 +15,6 @@ const Login = () => {
   //   fun para q busque los existentes
   const usuarioExistente = JSON.parse(localStorage.getItem(formData.usuario));
 
-  // const contrasenaExistente = JSON.parse(localStorage.getItem(formData.contrasena));
-  //quiero poner esto para que recuerde tambien del existente la contraseña, porque solo con el usuario puede entrar y tiene que ser con los dos
-  //tendria que agregarñe a usuarioWxistente un && contrasenaExistente? si es asi no me lo toma.
-  //Y QUE SALTE UN ALERT CUANDO NO PUEDA INGRESAR DE USUARIO Y/O CONTRASEÑA INCORRECTO Y ALERT TAMBIEN SI APRETA Y NO ESTA REGISTRADO
-
   const handleRegistro = (e) => {
     e.preventDefault();
     if (formData.usuario.length > 0 && formData.contrasena.length > 0) {
@@ -32,15 +27,22 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (usuarioExistente) {
+    if (
+      usuarioExistente.usuario === formData.usuario &&
+      usuarioExistente.contrasena === formData.contrasena
+    ) {
       navegar("/");
+    } else {
+      alert(
+        "Debes estar registrado para ingresar o has puesto usuario y/o contraseña inválida"
+      );
     }
   };
 
   return (
     <>
       <form
-        className="bg-slate-900 text-amber-400 text-3xl text-center rounded-sm border-8 border-double border-amber-300 mx-auto max-w-3xl mb-3 p-5 mt-10%"
+        className="bg-slate-900 text-amber-400 text-3xl text-center rounded-sm border-8 border-double border-amber-300 mx-auto max-w-3xl mb-3 p-1 mt-10%"
         onSubmit={(e) => handleSubmit(e)}
       >
         <fieldset>
@@ -49,7 +51,7 @@ const Login = () => {
           </legend>
           <label htmlFor="usuario">Usuario: </label>
           <input
-            className=" w-full sm:w-auto sm:ml-1 mb-7"
+            className="w-full sm:w-auto sm:ml-1 mb-7 text-2xl sm:text-3xl"
             type="text"
             name="usuario"
             placeholder="Escriba su usuario"
@@ -60,7 +62,7 @@ const Login = () => {
           <br />
           <label htmlFor="contrasena">Contraseña: </label>
           <input
-            className="mb-16 w-full sm:w-auto sm:ml-1"
+            className="mb-16 w-full sm:w-auto sm:ml-1 text-2xl sm:text-3xl"
             type="password"
             name="contrasena"
             placeholder="Escriba su contraseña"
@@ -70,13 +72,13 @@ const Login = () => {
           <br />
           <div className="flex justify-around ">
             <button
-              className="border rounded p-3 bg-blue-800 text-white"
+              className="border rounded p-3 bg-blue-800 text-white text-2xl sm:text-3xl"
               type="submit"
             >
               Ingresar
             </button>
             <button
-              className="border rounded p-3 bg-green-700 text-white"
+              className="border rounded p-3 bg-green-700 text-white text-2xl sm:text-3xl"
               type="button"
               onClick={(e) => handleRegistro(e)}
             >

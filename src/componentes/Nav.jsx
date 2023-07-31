@@ -9,7 +9,7 @@ const Nav = () => {
             className="w-20 h-20 -mt-8"
             src="https://st4.depositphotos.com/8499796/39471/v/600/depositphotos_394711436-stock-illustration-plane-travel-icon-air-travel.jpg"
           />
-          <p className="inline-block">Disfruta cada momento</p>
+          <p className="sm:inline-block hidden">Disfruta cada momento</p>
         </div>
       </Link>
       <div className="flex flex-row ">
