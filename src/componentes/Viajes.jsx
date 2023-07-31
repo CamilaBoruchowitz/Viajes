@@ -6,7 +6,7 @@ const Viajes = () => {
   const [viajes, setViajes] = useState([]);
 
   useEffect(() => {
-    fetch("https://run.mocky.io/v3/72d6dca1-4d27-4932-b9dc-85d0374870c7")
+    fetch(import.meta.env.VITE_API_URL)
       .then((res) => res.json())
       .then((data) => setViajes(data));
   }, []);
